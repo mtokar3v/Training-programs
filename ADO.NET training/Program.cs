@@ -27,8 +27,26 @@ namespace ADO.NET_training
             //Есть вопросы к безопасности, но, увы, названия таблиц нельзя передавать в качетсве параметров 
             string sqlExpression = $"USE adonetdb; SELECT Count(*) FROM {name}";
             SqlCommand command = new SqlCommand(sqlExpression, connection);
-            Console.WriteLine((Int32)command.ExecuteScalar());
             return (Int32)command.ExecuteScalar() != 0;
+        }
+
+        static void TableOutput(SqlDataReader reader)
+        {
+            if (reader.HasRows)
+            {
+                int colsCount = reader.FieldCount;
+
+                for (int i = 0; i < colsCount; i++)
+                    Console.Write($"{reader.GetName(i)}\t");
+                Console.WriteLine('\n');
+                while (reader.Read())
+                    for (int i = 0; i < colsCount; i++)
+                    {
+                        Console.Write($"{reader.GetValue(i)}\t");
+                        if (i + 1 == colsCount)
+                            Console.WriteLine('\n');
+                    }
+            }
         }
 
         static void Main(string[] args)
@@ -104,8 +122,6 @@ namespace ADO.NET_training
                     command.ExecuteNonQuery();
                 }
 
-
-
                 if (!IsTableEmpty("Product", connection))
                 {
                     command = new SqlCommand("INSERT INTO Product VALUES" +
@@ -174,16 +190,106 @@ namespace ADO.NET_training
                     command.ExecuteNonQuery();
                 }
 
-                command = new SqlCommand("SELECT * FROM Laptop", connection);
-                var reader = command.ExecuteReader();
+                SqlDataReader reader;
 
-                if (reader.HasRows)
-                {
-                    Console.WriteLine($"{reader.GetName(0)}\t{reader.GetName(1)}\t{reader.GetName(2)}\t{reader.GetName(3)}\t{reader.GetName(4)}\t{reader.GetName(5)}");
-                    while (reader.Read())
-                        Console.WriteLine($"{reader.GetValue(0)}\t{reader.GetValue(1)}\t{reader.GetValue(2)}\t{reader.GetValue(3)}\t{reader.GetValue(4)}\t{reader.GetValue(5)}");
-                }
+                //#6
+                Console.WriteLine("Для каждого производителя, выпускающего ПК-блокноты c объёмом жесткого диска не менее 10 Гбайт,\n " +
+                    "найти скорости таких ПК-блокнотов. Вывод: производитель, скорость.\n");
 
+                command = new SqlCommand("Select DISTINCT Product.maker, Laptop.speed " +
+                    "from Product " +
+                    "INNER JOIN Laptop ON Product.type = 'laptop' and Laptop.model = Product.model and Laptop.hd >= 10", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
+
+                //#7
+                Console.WriteLine("Найдите номера моделей и цены всех имеющихся в продаже\n " +
+                    "продуктов (любого типа) производителя B (латинская буква).\n");
+
+                command = new SqlCommand("SELECT Product.model, PC.Price " +
+                    "FROM Product INNER JOIN PC ON Product.model = PC.model WHERE Product.maker = 'B' " +
+                    "UNION " +
+                    "SELECT Product.model, Laptop.price " +
+                    "FROM Product INNER JOIN Laptop ON Product.model=Laptop.model WHERE Product.maker='B' " +
+                    "UNION " +
+                    "SELECT Product.model, Printer.price " +
+                    "FROM Product INNER JOIN Printer ON Product.model=Printer.model WHERE Product.maker='B' ", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
+
+                //#8
+                Console.WriteLine("Найдите производителя, выпускающего ПК, но не ПК-блокноты.\n");
+
+                command = new SqlCommand("select distinct maker from product " +
+                    "where type in ('pc') " +
+                    "except " +
+                    "select distinct maker from product " +
+                    "where type in ('laptop')", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
+
+                //#9
+                Console.WriteLine("Найдите производителей ПК с процессором не менее 450 Мгц.\n" +
+                    "Вывести: Maker");
+
+                command = new SqlCommand("select distinct product.maker from product " +
+                    "join pc on product.model = pc.model " +
+                    "where pc.speed >= 450", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
+
+                //#10
+                Console.WriteLine("Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price\n");
+
+                command = new SqlCommand("Select model, price from printer " +
+                    "where price = (select max(price) from printer)", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
+
+                //#17
+                Console.WriteLine("Найдите модели ПК-блокнотов, скорость которых меньше скорости\n" +
+                    "каждого из ПК.\n" +
+                    "Вывести: type, model, speed\n");
+
+                command = new SqlCommand("Select distinct p.type, l.model, l.speed from laptop as l " +
+                    "join product as p on p.model = l.model " +
+                    "where speed < (select min(speed) from pc)", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
+
+                //#24
+                Console.WriteLine("Перечислите номера моделей любых типов, имеющих самую\n" +
+                    "высокую цену по всей имеющейся в базе данных продукции.\n");
+
+                command = new SqlCommand("SELECT model " +
+                    "FROM ( " +
+                    " SELECT model, price " +
+                    " FROM pc " +
+                    " UNION " +
+                    " SELECT model, price " +
+                    " FROM Laptop " +
+                    " UNION " +
+                    " SELECT model, price" +
+                    " FROM Printer" +
+                    ") t1 " +
+                    "where price = ( " +
+                    "select max(price) from ( " +
+                    "select price from pc " +
+                    "union " +
+                    "select price from laptop " +
+                    "union " +
+                    "select price from printer " +
+                    ")t2 " +
+                    ")", connection);
+                reader = command.ExecuteReader();
+                TableOutput(reader);
+                reader.Close();
 
             }
             Console.Read();
