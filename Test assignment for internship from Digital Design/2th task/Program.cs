@@ -16,7 +16,7 @@ namespace _2th_task
                 Console.WriteLine(ex);
             }
 
-            Console.WriteLine((int)'ѣ');
+            Console.WriteLine(tree.Find("абв"));
             Console.ReadKey();
         }
     }
