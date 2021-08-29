@@ -65,7 +65,13 @@ namespace _2th_task
             {
                Console.WriteLine(ex.Message);
             }
+<<<<<<< HEAD
             Console.ReadLine();
+=======
+
+            Console.WriteLine((int)'ѣ');
+            Console.ReadKey();
+>>>>>>> parent of fad38ed (update trie tree)
         }
     }
 }
