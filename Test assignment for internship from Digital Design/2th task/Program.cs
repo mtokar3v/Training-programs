@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Net;
 
 namespace _2th_task
 {
@@ -64,7 +65,7 @@ namespace _2th_task
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
