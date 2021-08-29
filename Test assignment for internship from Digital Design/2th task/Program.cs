@@ -45,12 +45,9 @@ namespace _2th_task
                         wordInfo.Remove("");
                 }
 
+                string name = path.Substring(path.LastIndexOf('\\'), path.LastIndexOf('.') - path.LastIndexOf('\\'));
                 Console.Write("Введите путь для сохранения результатов: ");
-                path = Console.ReadLine() + "\\result.txt";
-
-                FileInfo fileInfo = new FileInfo(path);
-                if (!fileInfo.Exists)
-                    fileInfo.Create();
+                path = Console.ReadLine() + "\\"+name+"_word_count.txt";
 
                 using (StreamWriter stream2 = new StreamWriter(path, false))
                 {
@@ -65,7 +62,7 @@ namespace _2th_task
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
