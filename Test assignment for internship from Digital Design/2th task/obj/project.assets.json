@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\2th task.csproj",
-      "projectName": "2th task",
-      "projectPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\2th task.csproj",
+      "projectUniqueName": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\2nd task.csproj",
+      "projectName": "2nd task",
+      "projectPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\2nd task.csproj",
       "packagesPath": "C:\\Users\\mtoka\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\obj\\",
       "projectStyle": "PackageReference",
