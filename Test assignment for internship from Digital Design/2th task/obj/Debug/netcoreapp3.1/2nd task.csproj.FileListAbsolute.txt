@@ -1,0 +1,13 @@
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\bin\Debug\netcoreapp3.1\2nd task.exe
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\bin\Debug\netcoreapp3.1\2nd task.deps.json
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\bin\Debug\netcoreapp3.1\2nd task.runtimeconfig.json
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\bin\Debug\netcoreapp3.1\2nd task.runtimeconfig.dev.json
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\bin\Debug\netcoreapp3.1\2nd task.dll
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\bin\Debug\netcoreapp3.1\2nd task.pdb
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.csprojAssemblyReference.cache
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.AssemblyInfoInputs.cache
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.AssemblyInfo.cs
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.csproj.CoreCompileInputs.cache
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.dll
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.pdb
+C:\Users\mtoka\source\repos\Training programs\Test assignment for internship from Digital Design\2th task\obj\Debug\netcoreapp3.1\2nd task.genruntimeconfig.cache
