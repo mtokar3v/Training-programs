@@ -6,7 +6,7 @@ namespace _2th_task
 {
     interface IFormatting
     {
-        public void Check(ref string text, ref int numerator);
+        public void Check(ref string text, int numerator);
     }
     class DelHtml : IFormatting
     {
@@ -17,11 +17,10 @@ namespace _2th_task
         public DelHtml()
         {
             start = 0;
-            length = 0;
             progressing = false;
         }
 
-        public void Check(ref string text, ref int numerator)
+        public void Check(ref string text, int numerator)
         {
             if (!progressing && text[numerator] == '<')
             {
@@ -31,9 +30,12 @@ namespace _2th_task
 
             if (progressing && text[numerator] == '>')
             {
-                length = numerator - start + 1;
-                text = text.Remove(start, length);
-                numerator -= length;
+                StringBuilder _text = new StringBuilder(text);
+
+                for (int i = start; i <= numerator; i++)
+                    _text[i] = ' ';
+
+                text = _text.ToString();
                 progressing = false;
             }
         }
@@ -41,14 +43,15 @@ namespace _2th_task
 
     class DelDash : IFormatting
     {
-        public void Check(ref string text, ref int numerator)
+        public void Check(ref string text, int numerator)
         {
             try
             {
                 if (text[numerator] == '-' && (text[numerator - 1] == ' ' || text[numerator + 1] == ' '))
                 {
-                    text = text.Remove(numerator, 1);
-                    numerator--;
+                    StringBuilder _text = new StringBuilder(text);
+                    _text[numerator] = ' ';
+                    text = _text.ToString();
                 }
             }
             catch

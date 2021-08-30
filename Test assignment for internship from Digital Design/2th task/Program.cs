@@ -28,7 +28,7 @@ namespace _2th_task
 
                         for (int i = 0; i < text.Length; i++)
                             foreach (var format in formattings)
-                                format.Check(ref text, ref i);
+                                format.Check(ref text, i);
                     }
 
                     string[] words = text.Split(new char[] { '.', '!', '?', ',', ' ', '\n', '\t', '\r', '/', '(', ')', ':', ';', '\"' });
@@ -47,7 +47,7 @@ namespace _2th_task
 
                 string name = path.Substring(path.LastIndexOf('\\'), path.LastIndexOf('.') - path.LastIndexOf('\\'));
                 Console.Write("Введите путь для сохранения результатов: ");
-                path = Console.ReadLine() + "\\"+name+"_word_count.txt";
+                path = Console.ReadLine() + "\\" + name + "_word_count.txt";
 
                 using (StreamWriter stream2 = new StreamWriter(path, false))
                 {
