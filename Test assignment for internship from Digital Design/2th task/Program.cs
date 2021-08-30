@@ -14,6 +14,7 @@ namespace _2th_task
             Console.Write("Введите путь до файла: ");
             path = Console.ReadLine();
             Dictionary<string, int> wordInfo = new Dictionary<string, int>();
+
             try
             {
                 using (StreamReader stream = new StreamReader(path))

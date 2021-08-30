@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace _2th_task
 {
@@ -11,7 +9,6 @@ namespace _2th_task
     class DelHtml : IFormatting
     {
         private int start;
-        private int length;
         private bool progressing;
 
         public DelHtml()
@@ -30,12 +27,8 @@ namespace _2th_task
 
             if (progressing && text[numerator] == '>')
             {
-                //StringBuilder _text = new StringBuilder(text);
-
                 for (int i = start; i <= numerator; i++)
                     text[i] = ' ';
-
-                //text = text.ToString();
                 progressing = false;
             }
         }                                   
@@ -48,11 +41,7 @@ namespace _2th_task
             try
             {
                 if (text[numerator] == '-' && (text[numerator - 1] == ' ' || text[numerator + 1] == ' '))
-                {
-                    //StringBuilder _text = new StringBuilder(text);
                     text[numerator] = ' ';
-                    //text = _text.ToString();
-                }
             }
             catch
             {
