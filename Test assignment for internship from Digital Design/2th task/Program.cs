@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-using System.Net;
+using System.Text;
 
 namespace _2th_task
 {
@@ -14,24 +14,25 @@ namespace _2th_task
             Console.Write("Введите путь до файла: ");
             path = Console.ReadLine();
             Dictionary<string, int> wordInfo = new Dictionary<string, int>();
-
             try
             {
                 using (StreamReader stream = new StreamReader(path))
                 {
-                    string text = stream.ReadToEnd();
-
+                    StringBuilder builder = new StringBuilder(stream.ReadToEnd());
+                    
                     //форматирование
                     if (path.EndsWith(".fb2"))
                     {
                         IFormatting[] formattings = new IFormatting[] { new DelHtml(), new DelDash() };
 
-                        for (int i = 0; i < text.Length; i++)
+                        for (int i = 0; i < builder.Length; i++)
                             foreach (var format in formattings)
-                                format.Check(ref text, i);
+                                format.Check(ref builder, i);
                     }
 
+                    string text = builder.ToString();
                     string[] words = text.Split(new char[] { '.', '!', '?', ',', ' ', '\n', '\t', '\r', '/', '(', ')', ':', ';', '\"' });
+
                     foreach (var t in words)
                     {
                         string word = t.ToLower();
