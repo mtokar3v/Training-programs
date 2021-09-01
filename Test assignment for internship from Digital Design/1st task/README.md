@@ -17,4 +17,4 @@
 ![test1](images/sqltest1.png)
 ![test2](images/sqltest2.png)
 ![test3](images/sqltest3.png)
-![test4](images/sqltest3.png)
+![test4](images/sqltest4.png)
