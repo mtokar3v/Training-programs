@@ -1,0 +1,19 @@
+CREATE DATABASE departmentdb;
+GO
+
+USE departmentdb;
+
+CREATE TABLE Department
+(
+	ID INT PRIMARY KEY IDENTITY,
+	Name NVARCHAR(100)
+)
+
+CREATE TABLE Employee
+(
+	ID INT PRIMARY KEY IDENTITY,
+	Departament_ID INT REFERENCES Department(ID) NOT NULL,
+	Chief_ID INT REFERENCES Employee(ID) NOT NULL,
+	Name NVARCHAR(100),
+	Salary MONEY
+)

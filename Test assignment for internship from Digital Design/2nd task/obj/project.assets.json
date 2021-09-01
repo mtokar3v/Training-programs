@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\2nd task.csproj",
+      "projectUniqueName": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2nd task\\2nd task.csproj",
       "projectName": "2nd task",
-      "projectPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\2nd task.csproj",
+      "projectPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2nd task\\2nd task.csproj",
       "packagesPath": "C:\\Users\\mtoka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2th task\\obj\\",
+      "outputPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Test assignment for internship from Digital Design\\2nd task\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mtoka\\AppData\\Roaming\\NuGet\\NuGet.Config",

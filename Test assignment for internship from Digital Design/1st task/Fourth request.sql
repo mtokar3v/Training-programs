@@ -1,0 +1,1 @@
+SELECT * FROM Employee WHERE Name LIKE '[Ð]%[Í]'
