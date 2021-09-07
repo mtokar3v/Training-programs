@@ -147,6 +147,117 @@ namespace The_1st_project
                 case 3: MapleHandler(tree); break;
             }
         }
+        static void thirdLVL()
+        {
+            List<IGrowable> plants = new List<IGrowable>();
+            Console.Clear();
+            printThirdLvlMenu();
+
+            byte choise = byte.MaxValue;
+
+            while (choise != 0)
+            {
+                try
+                {
+                    choise = byte.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    choise = byte.MaxValue;
+                }
+                switch (choise)
+                {
+                    case 1:
+                        plants.Add(AddPlant());
+                        Console.Clear();
+                        printThirdLvlMenu(); break;
+                    case 2: PrintListOfPlants(plants); break;
+                    case 3:
+                        Console.WriteLine("Введите номер растения:");
+                        int j = 0;
+                        try
+                        {
+                            j = Int32.Parse(Console.ReadLine());
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Неверное значение");
+                            j = Int32.MaxValue;
+                        }
+                        finally
+                        {
+                            if (j < plants.Count)
+                            {
+                                IGrowable growable = plants[j];
+                                if (growable != null)
+                                {
+                                    if (growable is Apple)
+                                    {
+                                        AppleHandler(growable);
+                                    }
+                                    else
+                                        if (growable is Cherry)
+                                        CherryHandler(growable);
+                                    else
+                                        if (growable is Maple)
+                                        MapleHandler(growable);
+                                    else
+                                        if (growable is Watermelon)
+                                        WatermelonHandler(growable);
+                                }
+
+                                Console.Clear();
+                                printThirdLvlMenu();
+                            }
+                            else
+                                Console.WriteLine("Растение не найдено");
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine("Введите номер растения:");
+                        int i = 0;
+                        try
+                        {
+                            i = Int32.Parse(Console.ReadLine());
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Неверное значение");
+                            i = Int32.MaxValue;
+                        }
+                        finally
+                        {
+                            if (i < plants.Count)
+                            {
+                                IGrowable growable = plants[i];
+                                if (growable != null)
+                                    UseInterfaceAPI(growable);
+                                Console.Clear();
+                                printThirdLvlMenu();
+                            }
+                            else
+                                Console.WriteLine("Растение не найдено");
+                        }
+                        break;
+
+
+
+                    default: Console.WriteLine("Неизвестная команда"); break;
+                }
+            }
+
+        }
+        static void printThirdLvlMenu()
+        {
+            Console.WriteLine("----------------------------------------------------------------");
+            Console.WriteLine("Что нужно сделать?");
+            Console.WriteLine("1.Добавить растение на грядку");
+            Console.WriteLine("2.Получить список растений");
+            Console.WriteLine("3.Взаимодействовать с конкретным растением (Расширенное)");
+            Console.WriteLine("4.Взаимодействовать с конкретным растением, как с объектом интерфейса IGrowable");
+            Console.WriteLine("0.Выход");
+            Console.WriteLine("----------------------------------------------------------------");
+        }
 
         static void CherryHandler(IGrowable cherry)
         {
@@ -314,108 +425,6 @@ namespace The_1st_project
             }
             Console.ReadKey();
         }
-
-        static void thirdLVL()
-        {
-            Console.Clear();
-            List<IGrowable> plants = new List<IGrowable>();
-            Console.WriteLine("----------------------------------------------------------------");
-            Console.WriteLine("Что нужно сделать?");
-            Console.WriteLine("1.Добавить растение на грядку");
-            Console.WriteLine("2.Получить список растений");
-            Console.WriteLine("3.Взаимодействовать с конкретным растением (Расширенное)");
-            Console.WriteLine("4.Взаимодействовать с конкретным растением, как с объектом интерфейса IGrowable");
-            Console.WriteLine("0.Выход");
-            Console.WriteLine("----------------------------------------------------------------");
-
-            byte choise = byte.MaxValue;
-
-            while (choise != 0)
-            {
-                try
-                {
-                    choise = byte.Parse(Console.ReadLine());
-                }
-                catch
-                {
-                    choise = byte.MaxValue;
-                }
-                switch (choise)
-                {
-                    case 1: plants.Add(AddPlant()); break;
-                    case 2: PrintListOfPlants(plants); break;
-                    case 3:
-                        Console.WriteLine("Введите номер растения:");
-                        int j = 0;
-                        try
-                        {
-                            j = Int32.Parse(Console.ReadLine());
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Неверное значение");
-                            j = Int32.MaxValue;
-                        }
-                        finally
-                        {
-                            if (j < plants.Count)
-                            {
-                                IGrowable growable = plants[j];
-                                if (growable != null)
-                                {
-                                    if (growable is Apple)
-                                    {
-                                        AppleHandler(growable);
-                                    }
-                                    else
-                                        if (growable is Cherry)
-                                        CherryHandler(growable);
-                                    else
-                                        if (growable is Maple)
-                                        MapleHandler(growable);
-                                    else
-                                        if (growable is Watermelon)
-                                        WatermelonHandler(growable);
-                                }
-
-                            }
-                            else
-                                Console.WriteLine("Растение не найдено");
-                        }
-                        break;
-                    case 4:
-                        Console.WriteLine("Введите номер растения:");
-                        int i = 0;
-                        try
-                        {
-                            i = Int32.Parse(Console.ReadLine());
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Неверное значение");
-                            i = Int32.MaxValue;
-                        }
-                        finally
-                        {
-                            if (i < plants.Count)
-                            {
-                                IGrowable growable = plants[i];
-                                if (growable != null)
-                                    UseInterfaceAPI(growable);
-                            }
-                            else
-                                Console.WriteLine("Растение не найдено");
-                        }
-                        break;
-
-
-
-                    default: Console.WriteLine("Неизвестная команда"); break;
-                }
-            }
-
-        }
-
         static void WatermelonHandler(IGrowable wm)
         {
             IFullForm form = new FullWatermelonForm();

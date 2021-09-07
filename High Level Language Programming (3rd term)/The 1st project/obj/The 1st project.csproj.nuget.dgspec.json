@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project\\The 1st project.csproj": {}
+    "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project\\The 1st project.csproj": {
+    "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project\\The 1st project.csproj",
+        "projectUniqueName": "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project.csproj",
         "projectName": "The 1st project",
-        "projectPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project\\The 1st project.csproj",
+        "projectPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project.csproj",
         "packagesPath": "C:\\Users\\mtoka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\The 1st project\\obj\\",
+        "outputPath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\High Level Language Programming (3rd term)\\The 1st project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mtoka\\AppData\\Roaming\\NuGet\\NuGet.Config",
