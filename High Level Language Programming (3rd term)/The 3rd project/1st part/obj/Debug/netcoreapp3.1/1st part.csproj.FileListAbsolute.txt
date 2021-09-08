@@ -1,0 +1,13 @@
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\bin\Debug\netcoreapp3.1\1st part.exe
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\bin\Debug\netcoreapp3.1\1st part.deps.json
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\bin\Debug\netcoreapp3.1\1st part.runtimeconfig.json
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\bin\Debug\netcoreapp3.1\1st part.runtimeconfig.dev.json
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\bin\Debug\netcoreapp3.1\1st part.dll
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\bin\Debug\netcoreapp3.1\1st part.pdb
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.csprojAssemblyReference.cache
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.AssemblyInfoInputs.cache
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.AssemblyInfo.cs
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.csproj.CoreCompileInputs.cache
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.dll
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.pdb
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 3rd project\1st part\obj\Debug\netcoreapp3.1\1st part.genruntimeconfig.cache
