@@ -9,7 +9,6 @@ namespace testUsingDLL
         [DllImport("localMax.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr findLocalMax( double[] array, int size);
 
-
         static void Main()
         {
             int size = 45;
