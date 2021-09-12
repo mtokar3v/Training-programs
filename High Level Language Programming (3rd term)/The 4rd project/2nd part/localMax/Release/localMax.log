@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+  localMax.cpp
+     Создается библиотека C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 4rd project\2nd part\localMax\Release\localMax.lib и объект C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 4rd project\2nd part\localMax\Release\localMax.exp
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  localMax.vcxproj -> C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 4rd project\2nd part\localMax\Release\localMax.dll

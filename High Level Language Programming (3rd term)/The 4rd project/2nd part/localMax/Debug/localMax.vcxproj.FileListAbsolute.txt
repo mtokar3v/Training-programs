@@ -1,0 +1,2 @@
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 4rd project\2nd part\localMax\Debug\localMax.dll
+C:\Users\mtoka\source\repos\Training programs\High Level Language Programming (3rd term)\The 4rd project\2nd part\localMax\Debug\localMax.pdb
