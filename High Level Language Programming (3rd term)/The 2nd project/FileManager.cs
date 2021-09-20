@@ -26,7 +26,6 @@ namespace The_2nd_project
             }
         }
 
-        //тут должен быть стек
         public void Pull(ref Stack<IProduct> products)
         {
             using(BinaryReader reader = new BinaryReader(File.Open(_path, FileMode.OpenOrCreate)))
