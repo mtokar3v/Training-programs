@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Up0OJthxyGEecXTKX8pZ2oNX1+gO1S9e6lNvVi5/SQP+nTTruxm/1JWZ6SOvGXHnF67DYj46oaqKM92pMyWmYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mtoka\\source\\repos\\Training programs\\Internet technologies (3rd term)\\WebApiServer\\WebApiServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mtoka\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

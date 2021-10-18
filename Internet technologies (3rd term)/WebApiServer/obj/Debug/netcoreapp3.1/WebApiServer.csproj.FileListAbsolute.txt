@@ -1,0 +1,40 @@
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.exe
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.deps.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.runtimeconfig.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.runtimeconfig.dev.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.dll
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.pdb
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.csprojAssemblyReference.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.AssemblyInfoInputs.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.AssemblyInfo.cs
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.csproj.CoreCompileInputs.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.RazorTargetAssemblyInfo.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\staticwebassets\WebApiServer.StaticWebAssets.Manifest.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\staticwebassets\WebApiServer.StaticWebAssets.xml
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.dll
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.pdb
+C:\Users\mtoka\source\repos\Training programs\Internet technologies\Backend\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.genruntimeconfig.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.exe
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.deps.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.runtimeconfig.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.runtimeconfig.dev.json
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.dll
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\WebApiServer.pdb
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.csprojAssemblyReference.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.AssemblyInfoInputs.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.AssemblyInfo.cs
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.RazorTargetAssemblyInfo.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\staticwebassets\WebApiServer.StaticWebAssets.Manifest.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\staticwebassets\WebApiServer.StaticWebAssets.xml
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.dll
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.pdb
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.genruntimeconfig.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.csproj.CoreCompileInputs.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mtoka\source\repos\Training programs\Internet technologies (3rd term)\WebApiServer\obj\Debug\netcoreapp3.1\WebApiServer.csproj.CopyComplete

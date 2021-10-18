@@ -19,12 +19,3 @@ overlay.onclick = () => {
 }
 
 let imgs = document.getElementsByTagName('img');
-
-for(let i = 0; i < imgs.length; i++)
-{
-	let signature = imgs[i].getAttribute('signature');
-	let p = document.createElement('p');
-	p.style.textAlign = 'center';
-	p.innerHTML = signature;
-	imgs[i].after(p);
-}

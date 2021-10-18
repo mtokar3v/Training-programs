@@ -84,3 +84,18 @@ background-color: black;
 	position: fixed;
 	min-width: 60%;
 }
+
+.someImg::after{
+	content: attr(signature);
+  	display: block;
+  	position: absolute;
+  	left: 43%;
+  	top: 90%;
+  	color: black;
+  	background-color: white;
+}
+
+.someImg{
+	text-align: center;
+	position: relative;
+}
