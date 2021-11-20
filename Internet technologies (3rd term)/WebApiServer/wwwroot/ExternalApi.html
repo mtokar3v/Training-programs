@@ -10,6 +10,10 @@
 
 <body>
     <style>
+        body{
+            margin-top: 10%;
+        }
+        
         .content {
             display: flex;
             flex-direction: row;
@@ -22,6 +26,12 @@
         #canvasBlock {
             width: 50%;
             position: relative;
+        }
+
+        @media (max-width: 750px) {
+            #canvasBlock {
+                width: 100%;
+            }
         }
     </style>
 
@@ -40,7 +50,7 @@
 
         <div class="content">
             <div id="canvasBlock">
-                <canvas id="myChart"></canvas>
+                <canvas id="myChart" width="1" height="1" style="margin-left: -50px;"></canvas>
             </div>
             <div>
                 <form>
@@ -65,11 +75,28 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
+    var newLineChart;
 
     async function getJsonAsync(uri) {
         let responce = await fetch(uri);
         let jsonResult = await responce.json();
         return jsonResult;
+    }
+
+    function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+
+    function removeData(chart) {
+        chart.data.labels.pop();
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.pop();
+        });
+        chart.update();
     }
 
     function createGraphic(label, data, name) {
@@ -94,12 +121,15 @@
         };
 
         var ctx = document.getElementById('myChart').getContext('2d');
+        ctx.canvas.width = 300;
+        ctx.canvas.height = 300;
 
-        var newLineChart = new Chart(ctx, {
+        newLineChart = new Chart(ctx, {
             type: 'line',
             data: info,
             options: {
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
             }
         });
 
@@ -151,7 +181,25 @@
                 return;
             }
 
-            createGraphic(label, data, secid);
+            newLineChart.data.labels = label;
+
+            var firstData = {
+                label: secid,
+                data: data,
+                backgroundColor: 'transparent',
+                pointBorderColor: 'orange',
+                pointBackgroundColor: 'rgba(255,150,0,0.5)',
+                pointRadius: 2,
+                pointHoverRadius: 5,
+                pointHitRadius: 15,
+                pointBorderWidth: 3,
+                borderWidth: 2,
+                fill: false,
+                lineTension: 0,
+            };
+
+            newLineChart.data.datasets = [firstData];
+            newLineChart.update();
         }
     }
 
@@ -176,9 +224,7 @@
             newOption.value = intervalsJSON.data[i].value;
             newOption.innerHTML = intervalsJSON.data[i].title;
             intervalsSelect.append(newOption);
-        }
-
-        
+        } 
     }
 </script>
 
