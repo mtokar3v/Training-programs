@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laba1</title>
+    <link rel="stylesheet" href="css/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="css/article.css" type="text/css" />
+</head>
+
+<body>
+    <style>
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 5%;
+
+        }
+
+        #canvasBlock {
+            width: 50%;
+            position: relative;
+        }
+    </style>
+
+    <div class="wrapper">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="article.html">Статья</a></li>
+                    <li><a href="statistics.html">Статистика</a></li>
+                    <li><a href="notes.html">Заметки</a></li>
+                    <li><a href="form.html">Анкета</a></li>
+                    <li class="active"><a href="ExternalApi.html">Внешнее API</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div id="canvasBlock">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div>
+                <form>
+                    <label>Наименование компании</label><br>
+                    <select id="CompaniesSelect"></select><br>
+                    <label>Интервал графика</label><br>
+                    <select id="IntervalsSelect"></select><br>
+                    <label>Количество записей в ответе</label><br>
+                    <input type="number" required min="1" max="1700" id="NumbersOfRecords" value="500"><br>
+                    <label style="color: grey">Допустимое значения: от 1 до 1700 записей</label><br>
+
+                    <label>Начиная с даты</label><br>
+                    <input type="date" id="StartsDate"><br>
+
+                    <input type="button" onclick="updateGraphicData('https://sedelkin.ru/api/history/get_data','lpDRhW4f%5Bj|i8mB~BjlCD#Ve6wAi', CompaniesSelect.value ,IntervalsSelect.value, NumbersOfRecords.value, StartsDate.value)" value="тык"><br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+
+    async function getJsonAsync(uri) {
+        let responce = await fetch(uri);
+        let jsonResult = await responce.json();
+        return jsonResult;
+    }
+
+    function createGraphic(label, data, name) {
+        var firstData = {
+            label: name,
+            data: data,
+            backgroundColor: 'transparent',
+            pointBorderColor: 'orange',
+            pointBackgroundColor: 'rgba(255,150,0,0.5)',
+            pointRadius: 2,
+            pointHoverRadius: 5,
+            pointHitRadius: 15,
+            pointBorderWidth: 3,
+            borderWidth: 2,
+            fill: false,
+            lineTension: 0,
+        };
+
+        var info = {
+            labels: label,
+            datasets: [firstData]
+        };
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var newLineChart = new Chart(ctx, {
+            type: 'line',
+            data: info,
+            options: {
+                responsive: false,
+            }
+        });
+
+        //document.getElementsByClassName('chartjs-hidden-iframe')[0].remove();
+    }
+
+    async function updateGraphicData(uri, key, secid, interval, limits, startDate) {
+        if (limits < 1 || limits > 1700) {
+            alert("Неверное количество записей")
+            return null;
+        }
+
+        let nowDateMs = Date.now();
+        if (Date.parse(startDate) > nowDateMs) {
+            alert("Неверная дата")
+            return null;
+        }
+
+        let responceObject = {
+            app_key  : key,
+            secid    : secid,
+            interval : interval,
+            limits   : limits,
+            start    : startDate,
+            finish: new Date(Date.now()).toISOString().substring(0, 10)
+        }
+
+        let responce = await fetch(uri, {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(responceObject)
+        });
+
+        if (responce.status == 200) {
+            let jsonResult = await responce.json();
+
+            let data = [];
+            let label = [];
+            let dataCount = jsonResult.count;
+            for (let i = 0; i < dataCount; i++) {
+                data.push(jsonResult.data[i].close);
+                label.push(jsonResult.data[i].datetime);
+            }
+
+            if (jsonResult.status == "Error") {
+                alert("Неверно введены данные");
+                return;
+            }
+
+            createGraphic(label, data, secid);
+        }
+    }
+
+    window.onload = async function () {
+        createGraphic([], [], "График котировок");
+
+        let securitiesJSON = await getJsonAsync('https://sedelkin.ru/api/security_list');
+        let securitiesLength = securitiesJSON.data.length;
+        let companiesSelect = document.getElementById('CompaniesSelect');
+        for (let i = 0; i < securitiesLength; i++) {
+            let newOption = document.createElement('option');
+            newOption.value = securitiesJSON.data[i].secid;
+            newOption.innerHTML = securitiesJSON.data[i].title;
+            companiesSelect.append(newOption);
+        }
+
+        let intervalsJSON = await getJsonAsync('https://sedelkin.ru/api/interval');
+        let intervalsLength = intervalsJSON.data.length;
+        let intervalsSelect = document.getElementById('IntervalsSelect');
+        for (let i = 0; i < intervalsLength; i++) {
+            let newOption = document.createElement('option');
+            newOption.value = intervalsJSON.data[i].value;
+            newOption.innerHTML = intervalsJSON.data[i].title;
+            intervalsSelect.append(newOption);
+        }
+
+        
+    }
+</script>
+

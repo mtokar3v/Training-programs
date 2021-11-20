@@ -40,6 +40,11 @@ namespace WebApiServer
 
             app.UseRouting();
 
+            app.UseDefaultFiles(new DefaultFilesOptions
+            {
+                DefaultFileNames = new List<string> { "form.html" }
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
