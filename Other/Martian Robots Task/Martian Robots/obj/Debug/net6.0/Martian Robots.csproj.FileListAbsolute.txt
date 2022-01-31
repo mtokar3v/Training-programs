@@ -1,0 +1,15 @@
+C:\Users\максимилиан\source\repos\Martian Robots\bin\Debug\net6.0\Martian Robots.exe
+C:\Users\максимилиан\source\repos\Martian Robots\bin\Debug\net6.0\Martian Robots.deps.json
+C:\Users\максимилиан\source\repos\Martian Robots\bin\Debug\net6.0\Martian Robots.runtimeconfig.json
+C:\Users\максимилиан\source\repos\Martian Robots\bin\Debug\net6.0\Martian Robots.dll
+C:\Users\максимилиан\source\repos\Martian Robots\bin\Debug\net6.0\ref\Martian Robots.dll
+C:\Users\максимилиан\source\repos\Martian Robots\bin\Debug\net6.0\Martian Robots.pdb
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.csproj.AssemblyReference.cache
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.AssemblyInfoInputs.cache
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.AssemblyInfo.cs
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.csproj.CoreCompileInputs.cache
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.dll
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\ref\Martian Robots.dll
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.pdb
+C:\Users\максимилиан\source\repos\Martian Robots\obj\Debug\net6.0\Martian Robots.genruntimeconfig.cache
