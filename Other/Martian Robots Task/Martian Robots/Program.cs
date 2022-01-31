@@ -38,7 +38,6 @@ namespace Martian_Robots
 
         public static void RunMartianRobotsTask(StartingValue startingValue)
         {
-            var runningStatus = true;
             var gridSize = startingValue.GridSizeLine.Split(' ').ToList();
             var grid = new Grid(int.Parse(gridSize[0]), int.Parse(gridSize[1]));
 

@@ -8,13 +8,13 @@
         {
             if (_grid.CanDetect(_robot.XCoord, _robot.YCoord))
             {
-                if(!_grid.HasTrack(_robot.XCoord, _robot.YCoord))
+                if(!_grid.HasTrack(_robot.XCoord, _robot.YCoord, _robot.RobotOrientation))
                     _robot.MoveForward();
 
                 if(!_grid.CanDetect(_robot.XCoord, _robot.YCoord))
                 {
                     var oldCoords = _coordsHistory.Peek();
-                    _grid.SetTrack(oldCoords.x, oldCoords.y);
+                    _grid.SetTrack(oldCoords.x, oldCoords.y, oldCoords.Orientation);
                     return false;
                 }
 
