@@ -20,11 +20,6 @@ public:
 		_dataLength = length;
 	}
 
-	//~ModBusPDU()
-	//{
-	//	delete[] _data;
-	//}
-
 	int GetSize()
 	{
 		return _dataLength + 1;

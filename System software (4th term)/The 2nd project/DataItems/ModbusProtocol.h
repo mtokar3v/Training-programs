@@ -48,12 +48,6 @@ public:
 		_PDU = new ModBusPDU(functionCode, data, length);
 	}
 
-	//~ModBusProtocol() 
-	//{
-	//	delete _header;
-	//	delete _PDU;
-	// }
-
 	int GetTotalSize() {
 		return _header->GetSize() + _PDU->GetSize();
 	}
