@@ -1,1 +1,5 @@
 ADO.NET training/obj
+*.png
+obj
+x64
+bin
