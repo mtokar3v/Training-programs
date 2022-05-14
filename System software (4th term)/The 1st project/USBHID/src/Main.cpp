@@ -212,6 +212,7 @@ void ColorDisplay(hid_device* handle, unsigned char* buf)
 	static bool color = 0;
 	color = !color;
 	buf[0] = Command::DrawPixel;
+	int lenght = 4;
 	for (unsigned char i = 0; i < displayHeight; i++)
 	{
 		for (unsigned char j = 0; j < displayWidth; j++)
@@ -219,7 +220,7 @@ void ColorDisplay(hid_device* handle, unsigned char* buf)
 			buf[1] = j;
 			buf[2] = i;
 			buf[3] = (unsigned char)color;
-			hid_send_feature_report(handle, buf, 4);
+			hid_send_feature_report(handle, buf, lenght);
 		}
 	}
 }
