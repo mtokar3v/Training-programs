@@ -8,6 +8,7 @@
 #include <wchar.h>
 #include <iostream>
 
+#include "NotationConvertor.h"
 #include "Constants.h"
 #include "Commands.h"
 #include "Pins.h"
@@ -114,8 +115,8 @@ void PrintUSBInfo(hid_device_info* deviceInfos)
 	{
 		cout << "Device Found" << endl;
 		cout << "Type: " << deviceInfo->vendor_id << " " << deviceInfo->product_id << endl;
-		cout << "Path : " << deviceInfo->path << endl;
-		cout << "Serial number : " << deviceInfo->serial_number << endl;
+		cout << "Path: " << deviceInfo->path << endl;
+		cout << "Serial number: " << deviceInfo->serial_number << endl;
 		cout << "Manufacturer: " << deviceInfo->manufacturer_string << endl;
 		cout << "Product: " << deviceInfo->product_string << endl;
 		cout << "Release: " << deviceInfo->release_number << endl;
@@ -171,8 +172,9 @@ void SetMaxBrightnes(hid_device* handle, unsigned char* buf)
 {
 	int length = 7;
 	buf[0] = Command::SetLEDBrightness;
-	for (int i = 1; i < length - 1; i++)
+	for (int i = 1; i < length; i++)
 		buf[i] = 0xff;
+
 	hid_send_feature_report(handle, buf, length);
 }
 
@@ -180,26 +182,31 @@ void SetMinBrightnes(hid_device* handle, unsigned char* buf)
 {
 	int length = 7;
 	buf[0] = Command::SetLEDBrightness;
-	for (int i = 1; i < length - 1; i++)
+	for (int i = 1; i < length; i++)
 		buf[i] = 0x00;
+
 	hid_send_feature_report(handle, buf, length);
 }
 
 void CheckVoltage(hid_device* handle, unsigned char* buf)
 {
-	union_type diod_color;
 	buf[0] = Command::GetVoltage;
 	hid_get_feature_report(handle, buf, 3);
-	memcpy(&diod_color, &buf[1], 2);
-	int res = diod_color.elem10;
+
+	unsigned char elem16[2];
+	memcpy(&elem16, &buf[1], 2);
+	int res = NotationConvertor::ConvertToChar16(elem16);
 	cout << "Voltage: " << res << endl;
-	for (int i = 0; i < 2; i++)
+
+	int length = 7;
+	for (int i = 0; i < length / 2; i++)
 	{
-		buf[1 + i * 2] = diod_color.elem16[0];
-		buf[2 + i * 2] = diod_color.elem16[1];
+		buf[1 + i * 2] = elem16[0];
+		buf[2 + i * 2] = elem16[1];
 	}
 	buf[0] = Command::SetLEDBrightness;
-	hid_send_feature_report(handle, buf, 7);
+	hid_send_feature_report(handle, buf, length);
+
 	Sleep(228);
 }
 
