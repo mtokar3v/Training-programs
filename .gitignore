@@ -5,3 +5,9 @@ x64
 bin
 v17
 project-colors.json
+*.suo
+*.dtbcache.v2
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
