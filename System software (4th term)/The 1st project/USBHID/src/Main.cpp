@@ -15,12 +15,6 @@
 
 using namespace std;
 
-struct union_type
-{
-	unsigned char elem16[2];
-	uint16_t elem10;
-};
-
 string GetString(wchar_t* wstr);
 void PrintControllerInfo(hid_device* handle);
 void PrintUSBInfo(hid_device_info* deviceInfo);
