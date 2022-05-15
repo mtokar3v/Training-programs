@@ -12,7 +12,7 @@ public:
 	static char16_t ConvertToChar16(unsigned char* bytes)
 	{
 		char16_t value = 0;
-		for (int i = 0; i < 2; i++)
+		for (int i = 2; i >= 0; i--)
 		{
 			value = value << 8;
 			value |= bytes[i];
@@ -24,7 +24,7 @@ public:
 	static char32_t ConvertToChar32(unsigned char* bytes)
 	{
 		char32_t value = 0;
-		for (int i = 0; i < 4; i++)
+		for (int i = 4; i >= 0; i--)
 		{
 			value = value << 8;
 			value |= bytes[i];
