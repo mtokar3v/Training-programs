@@ -14,7 +14,7 @@ public:
 		char16_t value = 0;
 		for (int i = 0; i < 2; i++)
 		{
-			value << 8;
+			value = value << 8;
 			value |= bytes[i];
 		}
 
@@ -26,7 +26,7 @@ public:
 		char32_t value = 0;
 		for (int i = 0; i < 4; i++)
 		{
-			value << 8;
+			value = value << 8;
 			value |= bytes[i];
 		}
 
