@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 
 static class NotationConvertor {
 public:
@@ -23,9 +22,9 @@ public:
 	static char32_t ConvertToChar32(unsigned char* bytes)
 	{
 		char32_t value = 0;
-		for (int i = 0; i < 4; i++)
+		for (int i = 4; i >= 0; i--)
 		{
-			value << 8;
+			value = value << 8;
 			value |= bytes[i];
 		}
 
