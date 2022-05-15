@@ -11,9 +11,9 @@ public:
 	static char16_t ConvertToChar16(unsigned char* bytes)
 	{
 		char16_t value = 0;
-		for (int i = 0; i < 2; i++)
+		for (int i = 2; i >= 0; i--)
 		{
-			value << 8;
+			value = value << 8;
 			value |= bytes[i];
 		}
 

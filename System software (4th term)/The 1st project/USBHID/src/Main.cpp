@@ -15,12 +15,6 @@
 
 using namespace std;
 
-union DiodColor
-{
-	unsigned char char8[2];
-	char16_t char16;
-};
-
 string GetString(wchar_t* wstr);
 void PrintControllerInfo(hid_device* handle);
 void PrintUSBInfo(hid_device_info* deviceInfo);
@@ -193,17 +187,16 @@ void CheckVoltage(hid_device* handle, unsigned char* buf)
 	buf[0] = Command::GetVoltage;
 	hid_get_feature_report(handle, buf, 3);
 
-	unsigned char elem16[2];
-	DiodColor diodColor;
-	memcpy(&diodColor, &buf[1], 2);
-	int res = NotationConvertor::ConvertToChar16(elem16);
-	cout << "Voltage: " << diodColor.char16 << endl;
+	unsigned char voltage[2];
+	memcpy(&voltage, &buf[1], 2);
+	char16_t voltageValue = NotationConvertor::ConvertToChar16(voltage);
+	cout << "Voltage: " << voltageValue << endl;
 
 	int length = 7;
 	for (int i = 0; i < length / 2; i++)
 	{
-		buf[1 + i * 2] = diodColor.char8[0];
-		buf[2 + i * 2] = diodColor.char8[1];
+		buf[1 + i * 2] = voltage[0];
+		buf[2 + i * 2] = voltage[1];
 	}
 	buf[0] = Command::SetLEDBrightness;
 	hid_send_feature_report(handle, buf, length);
