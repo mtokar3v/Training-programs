@@ -43,16 +43,28 @@ int main()
             case '2': 
             {
                 std::cout << "Write your user name: ";
-                char* userName = new char[30];
-                std::cin >> userName;
+
+                std::cin.seekg(0, std::ios::end);
+                std::cin.clear();
+
+                char userName[30];
+                std::cin.getline(userName, 30);
+
                 modbus = new ModBusProtocol(0, 0, strlen(userName) + 1, 0, FunctionCode::WELCOME, (unsigned char*)userName);
                 break;
             }
             case '3': 
             {
                 std::cout << "Write number: ";
-                char* number = new char[10];
+
+                char number[10];
                 std::cin >> number;
+                if (atoi(number) > INT_MAX)
+                {
+                    std::cout << "Input value too big";
+                    break;
+                }
+
                 modbus = new ModBusProtocol(0, 0, strlen(number) + 1, 0, FunctionCode::TOBINARY, (unsigned char*)number);
                 break;
             }
@@ -64,17 +76,22 @@ int main()
             }
 
             system("cls");
-            unsigned char* command = modbus->GetCommand();
-            send(sock, (char*)command, modbus->GetTotalSize(), NULL);
 
-            char data[MAXBYTE];
-            recv(sock, data, MAXBYTE, NULL);
-            ModBusProtocol response = ModBusProtocol((unsigned char*) data);
-            std::cout << "Server response: " << response.GetData() << std::endl;
-            std::cin >> choice;
+            if (modbus != nullptr)
+            {
+                unsigned char* command = modbus->GetCommand();
+                send(sock, (char*)command, modbus->GetTotalSize(), NULL);
+
+                char data[MAXBYTE];
+                recv(sock, data, MAXBYTE, NULL);
+                ModBusProtocol response = ModBusProtocol((unsigned char*)data);
+                std::cout << "Server response: " << response.GetData() << std::endl;
+                std::cin >> choice;
+
+                delete modbus;
+            }
 
             closesocket(sock);
-            delete modbus;
         }
     }
     catch (std::exception ex)

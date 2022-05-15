@@ -6,7 +6,8 @@
 #include "ModbusRequestHandler.h"
 #pragma comment (lib, "ws2_32.lib")
 
-int main() {
+int main() 
+{
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
 
@@ -23,12 +24,13 @@ int main() {
     int nSize;
     SOCKET clntSock;
 
-    try
+    char data[MAXBYTE];
+    while (true) 
     {
-        while (true) 
+        try
         {
             SOCKADDR* clntAddr = nullptr;
-            char* data = new char[MAXBYTE];
+
             nSize = sizeof(SOCKADDR);
             clntSock = accept(servSock, clntAddr, &nSize);
             recv(clntSock, data, MAXBYTE, NULL);
@@ -36,17 +38,15 @@ int main() {
             ModBusProtocol modbus = ModBusProtocol((unsigned char*)data);
             ModbusRequestHandler handler = ModbusRequestHandler(clntSock);
             handler.HandleRequest(modbus);
-
-            closesocket(clntSock);
-            delete clntAddr;
-            delete[] data;
         }
+        catch(std::exception ex)
+        {
+            std::cout << "Error: " << ex.what() << std::endl;
+        }
+
+        closesocket(clntSock);
     }
-    catch (std::exception ex)
-    {
-        std::string errorMessage = std::string("Server is shut down.") + std::string(ex.what());
-        send(clntSock, errorMessage.c_str(), errorMessage.length() + 1, NULL);
-    }
+
 
     closesocket(servSock);
 

@@ -2,7 +2,8 @@
 #include "ModbusProtocol.h"
 #include <iostream>
 
-static class NotationConvertor {
+static class NotationConvertor 
+{
 public:
 	static unsigned char* ToByteArray(char16_t char16t) 
 	{
@@ -37,8 +38,8 @@ private:
 	static unsigned char* ConvertToByteArray(unsigned long value, int length)
 	{
 		unsigned char* bytes = new unsigned char[length];
-		for (int i = 0; i < length; i++)
-			bytes[i] = static_cast<int>(value >> 8 * (length - i - 1) & 0xff);;
+		for (int i = length; i >= 0; i--)
+			bytes[i] = static_cast<int>(value >> 8 * i & 0xff);
 
 		return bytes;
 	}

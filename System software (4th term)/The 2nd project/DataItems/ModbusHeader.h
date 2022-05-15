@@ -62,10 +62,6 @@ public:
 
 		header[6] = _unitId;
 
-		delete transactionId;
-		delete protocolId;
-		delete length;
-
 		return header;
 	}
 };
